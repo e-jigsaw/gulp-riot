@@ -11,7 +11,7 @@ This plugin compile [riot](https://github.com/muut/riotjs)'s `.tag` files.
 
 `example.tag`:
 
-```
+```jsx
 <example>
   <p>This is { sample }</p>
 
@@ -21,7 +21,7 @@ This plugin compile [riot](https://github.com/muut/riotjs)'s `.tag` files.
 
 `gulpfile.coffee`:
 
-```
+```coffee
 gulp = require 'gulp'
 riot = require 'gulp-riot'
 
@@ -33,7 +33,7 @@ gulp.task 'riot', ->
 
 Run task:
 
-```
+```sh
 % gulp riot
 % cat example.js
 riot.tag('example', '<p>This is { sample }</p>', function(opts) {
@@ -43,7 +43,7 @@ riot.tag('example', '<p>This is { sample }</p>', function(opts) {
 
 # Installation
 
-```
+```sh
 % npm install gulp-riot
 ```
 
@@ -54,13 +54,13 @@ riot.tag('example', '<p>This is { sample }</p>', function(opts) {
 
 # Build
 
-```
+```sh
 % gulp
 ```
 
 # Test
 
-```
+```sh
 % npm test
 ```
 
