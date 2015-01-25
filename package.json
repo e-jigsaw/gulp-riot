@@ -1,0 +1,30 @@
+{
+  "name": "gulp-riot",
+  "version": "0.0.0",
+  "description": "gulp plugin for riot",
+  "keywords": [],
+  "main": "build/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/gulp test"
+  },
+  "author": {
+    "name": "jigsaw",
+    "url": "http://jgs.me"
+  },
+  "repository": {
+    "url": "https://github.com/e-jigsaw/gulp-riot.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "^3.0.1",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "gulp": "^3.8.10",
+    "gulp-coffee": "^2.2.0",
+    "gulp-espower": "^0.10.0",
+    "gulp-mocha": "^2.0.0",
+    "power-assert": "^0.10.0"
+  }
+}
