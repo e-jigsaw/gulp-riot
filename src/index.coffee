@@ -1,6 +1,6 @@
 gutil = require 'gulp-util'
 through = require 'through2'
-compiler = require '../node_modules/riot/compiler'
+compiler = require 'riot/compiler'
 
 module.exports = ->
   transform = (file, encoding, callback)->

@@ -5,7 +5,7 @@
 
   through = require('through2');
 
-  compiler = require('../node_modules/riot/compiler');
+  compiler = require('riot/compiler');
 
   module.exports = function() {
     var transform;
