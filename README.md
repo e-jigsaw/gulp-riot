@@ -1,15 +1,68 @@
-gulp-riot
+gulp-riot  [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge.fury.io/js/gulp-riot) [![dependency Status](https://david-dm.org/e-jigsaw/gulp-riot/status.svg)](https://david-dm.org/e-jigsaw/gulp-riot) [![devDependency Status](https://david-dm.org/e-jigsaw/gulp-riot/dev-status.svg)](https://david-dm.org/e-jigsaw/gulp-riot#info=devDependencies)
 =========
 
 gulp plugin for riot
 
 # Usage
 
+This plugin compile [riot](https://github.com/muut/riotjs)'s `.tag` files.
+
+## Example
+
+`example.tag`:
+
+```
+<example>
+  <p>This is { sample }</p>
+
+  this.sample = 'example'
+</example>
+```
+
+`gulpfile.coffee`:
+
+```
+gulp = require 'gulp'
+riot = require 'gulp-riot'
+
+gulp.task 'riot', ->
+  gulp.src 'example.tag'
+    .pipe riot()
+    .pipe gulp.dest 'dest'
+```
+
+Run task:
+
+```
+% gulp riot
+% cat example.js
+riot.tag('example', '<p>This is { sample }</p>', function(opts) {
+  this.sample = 'example'
+})
+```
+
 # Installation
+
+```
+% npm install gulp-riot
+```
 
 # Requirements
 
+* Node.js
+* gulp
+
 # Build
+
+```
+% gulp
+```
+
+# Test
+
+```
+% npm test
+```
 
 # Author
 
@@ -21,7 +74,7 @@ MIT
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Takaya Kobayashi
+Copyright (c) 2015 Takaya Kobayashi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
