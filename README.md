@@ -55,7 +55,7 @@ riot.tag('example', '<p>This is { sample }</p>', function(opts) {
 # Build
 
 ```sh
-% gulp
+% npm run build
 ```
 
 # Test
