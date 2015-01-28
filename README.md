@@ -43,6 +43,28 @@ riot.tag('example', '<p>This is { sample }</p>', function(opts) {
 })
 ```
 
+## Compile options
+
+This plugin can give riot's compile options.
+
+```coffee
+gulp.task 'riot', ->
+  gulp.src 'example.tag'
+    .pipe riot
+      compact: true # <- this
+    .pipe gulp.dest 'dest'
+```
+
+### Available option
+
+* compact: `Boolean`
+  * Minify `</p> <p>` to `</p><p>`
+* expr: `Boolean`
+  * Run expressions trough parser defined with `--type`
+* type: `String, coffeescript | cs | es6 | none`
+  * JavaScript parser
+  * See more: https://muut.com/riotjs/compiler.html
+
 # Installation
 
 ```sh
