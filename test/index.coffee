@@ -27,3 +27,32 @@ it 'should compile riot tag file', (callback)->
     path: '/hoge/fuga.tag'
 
   stream.end()
+
+it 'should use compile options', (callback)->
+  stream = riot
+    compact: true
+
+  stream.once 'data', (file)->
+    contents = file.contents.toString()
+    assert.equal contents, """
+      riot.tag('sample', '<p>test { sample }</p><p>test { sample }</p><p>test { sample }</p>', function(opts) {
+
+        this.sample = 'hoge'
+
+      });
+    """
+    callback()
+
+  stream.write new gutil.File
+    contents: new Buffer '''
+      <sample>
+        <p>test { sample }</p>
+        <p>test { sample }</p>
+        <p>test { sample }</p>
+
+        this.sample = 'hoge'
+      </sample>
+    '''
+    path: '/hoge/fuga.tag'
+
+  stream.end()

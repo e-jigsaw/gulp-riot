@@ -7,7 +7,7 @@
 
   compile = require('riot/compiler/compiler').compile;
 
-  module.exports = function() {
+  module.exports = function(opts) {
     var transform;
     transform = function(file, encoding, callback) {
       if (file.isNull()) {
@@ -16,7 +16,7 @@
       if (file.isStream()) {
         return callback(new gutil.PluginError('gulp-article', 'Stream not supported'));
       }
-      file.contents = new Buffer(compile(file.contents.toString()));
+      file.contents = new Buffer(compile(file.contents.toString(), opts));
       file.path = file.path.replace(/\.tag/, '.js');
       return callback(null, file);
     };
