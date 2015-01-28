@@ -2,3 +2,5 @@ src
 test
 gulpfile.coffee
 .npmignore
+powered-test
+wercker.yml
