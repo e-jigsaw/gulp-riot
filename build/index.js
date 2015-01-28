@@ -1,11 +1,11 @@
 (function() {
-  var compiler, gutil, through;
+  var compile, gutil, through;
 
   gutil = require('gulp-util');
 
   through = require('through2');
 
-  compiler = require('riot/compiler/compiler');
+  compile = require('riot/compiler/compiler').compile;
 
   module.exports = function() {
     var transform;
@@ -16,7 +16,7 @@
       if (file.isStream()) {
         return callback(new gutil.PluginError('gulp-article', 'Stream not supported'));
       }
-      file.contents = new Buffer(compiler.compile(file.contents.toString()));
+      file.contents = new Buffer(compile(file.contents.toString()));
       file.path = file.path.replace(/\.tag/, '.js');
       return callback(null, file);
     };
