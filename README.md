@@ -1,5 +1,7 @@
-gulp-riot  [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge.fury.io/js/gulp-riot) [![dependency Status](https://david-dm.org/e-jigsaw/gulp-riot/status.svg)](https://david-dm.org/e-jigsaw/gulp-riot) [![devDependency Status](https://david-dm.org/e-jigsaw/gulp-riot/dev-status.svg)](https://david-dm.org/e-jigsaw/gulp-riot#info=devDependencies)
+gulp-riot  [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge.fury.io/js/gulp-riot) [![wercker status](https://app.wercker.com/status/be2b2fa4c806197c9cade9b1a5ff8308/s/master "wercker status")](https://app.wercker.com/project/bykey/be2b2fa4c806197c9cade9b1a5ff8308)
 =========
+
+[![dependency Status](https://david-dm.org/e-jigsaw/gulp-riot/status.svg)](https://david-dm.org/e-jigsaw/gulp-riot) [![devDependency Status](https://david-dm.org/e-jigsaw/gulp-riot/dev-status.svg)](https://david-dm.org/e-jigsaw/gulp-riot#info=devDependencies)
 
 gulp plugin for riot
 
