@@ -56,3 +56,23 @@ it 'should use compile options', (callback)->
     path: '/hoge/fuga.tag'
 
   stream.end()
+
+it 'should jade extension rename js', (callback)->
+  stream = riot()
+
+  stream.once 'data', (file)->
+    contents = file.contents.toString()
+    assert.equal file.path, '/hoge/fuga.js'
+    callback()
+
+  stream.write new gutil.File
+    contents: new Buffer '''
+      <sample>
+        <p>test { sample }</p>
+
+        this.sample = 'hoge'
+      </sample>
+    '''
+    path: '/hoge/fuga.jade'
+
+  stream.end()
