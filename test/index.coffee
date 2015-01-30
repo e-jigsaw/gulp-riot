@@ -1,6 +1,7 @@
 assert = require 'power-assert'
 gutil = require 'gulp-util'
-riot = require '../src/'
+
+riot = unless process.env.CI is 'true' then require '../src/' else require '../build/'
 
 it 'should compile riot tag file', (callback)->
   stream = riot()
