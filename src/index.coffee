@@ -8,7 +8,9 @@ module.exports = (opts)->
     if file.isStream() then return callback new gutil.PluginError('gulp-article', 'Stream not supported')
 
     file.contents = new Buffer compile file.contents.toString(), opts
-    file.path = file.path.replace /\.tag/, '.js'
+    splitedPath = file.path.split('.')
+    splitedPath[splitedPath.length - 1] = 'js'
+    file.path = splitedPath.join('.')
     callback null, file
 
   through.obj transform
