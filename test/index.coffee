@@ -88,6 +88,7 @@ it 'should match cli output when type: none', (callback)->
         sample() {
           console.log('test')
         }
+
       });
     """
     callback()
