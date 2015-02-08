@@ -63,6 +63,8 @@ gulp.task 'riot', ->
   * Run expressions trough parser defined with `--type`
 * type: `String, coffeescript | cs | es6 | none`
   * JavaScript parser
+* template: `String, jade`
+  * Template parser
   * See more: https://muut.com/riotjs/compiler.html
 
 # Installation
