@@ -61,7 +61,7 @@ gulp.task 'riot', ->
   * Minify `</p> <p>` to `</p><p>`
 * expr: `Boolean`
   * Run expressions trough parser defined with `--type`
-* type: `String, coffeescript | cs | es6 | none`
+* type: `String, coffeescript | typescript | cs | es6 | none`
   * JavaScript parser
 * template: `String, jade`
   * Template parser
