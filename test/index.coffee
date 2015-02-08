@@ -56,3 +56,34 @@ it 'should use compile options', (callback)->
     path: '/hoge/fuga.tag'
 
   stream.end()
+
+it 'should match cli output when type: none', (callback)->
+  stream = riot
+    type: 'none'
+
+  stream.once 'data', (file)->
+    contents = file.contents.toString()
+    assert.equal contents, """
+      riot.tag('sample', '<p>test { sample }</p>', function(opts) {
+
+        sample() {
+          console.log('test')
+        }
+
+      });
+    """
+    callback()
+
+  stream.write new gutil.File
+    contents: new Buffer '''
+      <sample>
+        <p>test { sample }</p>
+
+        sample() {
+          console.log('test')
+        }
+      </sample>
+    '''
+    path: '/hoge/fuga.tag'
+
+  stream.end()
