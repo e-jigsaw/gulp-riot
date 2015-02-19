@@ -11,7 +11,8 @@
   "main": "build/index.js",
   "scripts": {
     "test": "./node_modules/.bin/gulp test",
-    "build": "./node_modules/.bin/gulp"
+    "build": "./node_modules/.bin/gulp",
+    "prepublish": "rm -rf build/; ./node_modules/.bin/gulp"
   },
   "author": {
     "name": "jigsaw",
