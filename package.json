@@ -1,6 +1,6 @@
 {
   "name": "gulp-riot",
-  "version": "0.2.12",
+  "version": "0.2.14",
   "description": "gulp plugin for riot",
   "keywords": [
     "gulpplugin",
@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "gulp-util": "3.0.2",
-    "riot": "2.0.12",
+    "riot": "2.0.14",
     "through2": "0.6.3"
   },
   "devDependencies": {
