@@ -10,9 +10,9 @@
   ],
   "main": "build/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/gulp test",
-    "build": "./node_modules/.bin/gulp",
-    "prepublish": "rm -rf build/; ./node_modules/.bin/gulp"
+    "test": "gulp test",
+    "build": "gulp",
+    "prepublish": "rm -rf build/ && gulp"
   },
   "author": {
     "name": "jigsaw",
@@ -23,16 +23,16 @@
   },
   "license": "MIT",
   "dependencies": {
-    "gulp-util": "3.0.2",
-    "riot": "2.0.12",
-    "through2": "0.6.3"
+    "gulp-util": "3.0.4",
+    "riot": "2.0.14",
+    "through2": "1.1.1"
   },
   "devDependencies": {
-    "coffee-script": "^1.8.0",
-    "gulp": "^3.8.10",
-    "gulp-coffee": "^2.2.0",
-    "gulp-espower": "^0.10.0",
-    "gulp-mocha": "^2.0.0",
-    "power-assert": "^0.10.0"
+    "coffee-script": "^1.9.1",
+    "gulp": "^3.8.11",
+    "gulp-coffee": "^2.3.1",
+    "gulp-espower": "^0.10.1",
+    "gulp-mocha": "^2.0.1",
+    "power-assert": "^0.10.2"
   }
 }
