@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "gulp-util": "3.0.4",
-    "riot": "2.0.14",
+    "riot": "2.0.15",
     "through2": "1.1.1"
   },
   "devDependencies": {
@@ -33,6 +33,6 @@
     "gulp-coffee": "^2.3.1",
     "gulp-espower": "^0.10.1",
     "gulp-mocha": "^2.0.1",
-    "power-assert": "^0.10.2"
+    "power-assert": "^0.11.0"
   }
 }
