@@ -1,13 +1,15 @@
-assert = require 'power-assert'
-gutil = require 'gulp-util'
+require! {
+  \power-assert : assert
+  \gulp-util : gutil
+}
 
-riot = unless process.env.CI is 'true' then require '../src/' else require '../build/'
+riot = unless process.env.CI is \true then require \../src/ else require \../build/
 
 it 'should compile riot tag file', (callback)->
-  stream = riot()
+  stream = riot!
 
-  stream.once 'data', (file)->
-    contents = file.contents.toString()
+  stream.once \data, (file)->
+    contents = file.contents.toString!
     assert.equal contents, """
       riot.tag('sample', '<p>test { sample }</p>', function(opts) {
 
@@ -15,9 +17,9 @@ it 'should compile riot tag file', (callback)->
 
       });
     """
-    callback()
+    callback!
 
-  stream.write new gutil.File
+  stream.write new gutil.File do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
@@ -27,14 +29,14 @@ it 'should compile riot tag file', (callback)->
     '''
     path: '/hoge/fuga.tag'
 
-  stream.end()
+  stream.end!
 
 it 'should use compile options', (callback)->
-  stream = riot
+  stream = riot do
     compact: true
 
-  stream.once 'data', (file)->
-    contents = file.contents.toString()
+  stream.once \data, (file)->
+    contents = file.contents.toString!
     assert.equal contents, """
       riot.tag('sample', '<p>test { sample }</p><p>test { sample }</p><p>test { sample }</p>', function(opts) {
 
@@ -42,9 +44,9 @@ it 'should use compile options', (callback)->
 
       });
     """
-    callback()
+    callback!
 
-  stream.write new gutil.File
+  stream.write new gutil.File do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
@@ -56,17 +58,17 @@ it 'should use compile options', (callback)->
     '''
     path: '/hoge/fuga.tag'
 
-  stream.end()
+  stream.end!
 
 it 'should jade extension rename js', (callback)->
-  stream = riot()
+  stream = riot!
 
-  stream.once 'data', (file)->
-    contents = file.contents.toString()
-    assert.equal file.path, '/hoge/fuga.js'
-    callback()
+  stream.once \data, (file)->
+    contents = file.contents.toString!
+    assert.equal file.path, \/hoge/fuga.js
+    callback!
 
-  stream.write new gutil.File
+  stream.write new gutil.File do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
@@ -75,14 +77,14 @@ it 'should jade extension rename js', (callback)->
     '''
     path: '/hoge/fuga.jade'
 
-  stream.end()
+  stream.end!
 
 it 'should match cli output when type: none', (callback)->
-  stream = riot
-    type: 'none'
+  stream = riot do
+    type: \none
 
-  stream.once 'data', (file)->
-    contents = file.contents.toString()
+  stream.once \data, (file)->
+    contents = file.contents.toString!
     assert.equal contents, """
       riot.tag('sample', '<p>test { sample }</p>', function(opts) {
         sample() {
@@ -91,9 +93,9 @@ it 'should match cli output when type: none', (callback)->
 
       });
     """
-    callback()
+    callback!
 
-  stream.write new gutil.File
+  stream.write new gutil.File do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
@@ -104,4 +106,4 @@ it 'should match cli output when type: none', (callback)->
     '''
     path: '/hoge/fuga.tag'
 
-  stream.end()
+  stream.end!
