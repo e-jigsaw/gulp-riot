@@ -66,6 +66,9 @@ gulp.task 'riot', ->
 * template: `String, jade`
   * Template parser
   * See more: https://muut.com/riotjs/compiler.html
+* modular: `Boolean`
+  * For AMD and CommonJS option
+  * See more: http://riotjs.com/guide/compiler/#pre-compilation
 
 # Installation
 
@@ -93,6 +96,7 @@ gulp.task 'riot', ->
 # Author
 
 * jigsaw (http://jgs.me, [@e-jigsaw](http://github.com/e-jigsaw))
+* And contributors!
 
 # License
 
