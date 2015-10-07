@@ -189,3 +189,23 @@ it 'should match modular options output', (callback)->
     path: \/hoge/fuga.tag
 
   stream.end!
+
+it 'should return error when compile failed', (callback)->
+  stream = riot do
+            type: \nonescript
+
+  stream.once \error, (err)->
+    assert.equal err.plugin, \gulp-riot
+    callback!
+
+  stream.write new gutil.File do
+    contents: new Buffer '''
+      <sample>
+        <p>test { sample }</p>
+
+        this.sample = 'hoge'
+      </sample>
+    '''
+    path: \/hoge/fuga.tag
+
+  stream.end!
