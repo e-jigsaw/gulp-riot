@@ -3,6 +3,8 @@ gulp-riot  [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge
 
 [![dependency Status](https://david-dm.org/e-jigsaw/gulp-riot/status.svg)](https://david-dm.org/e-jigsaw/gulp-riot) [![devDependency Status](https://david-dm.org/e-jigsaw/gulp-riot/dev-status.svg)](https://david-dm.org/e-jigsaw/gulp-riot#info=devDependencies)
 
+[![NPM](https://nodei.co/npm/gulp-riot.png?downloadRank=true&downloads=true)](https://www.npmjs.com/package/gulp-riot)
+
 gulp plugin for riot
 
 # Usage
