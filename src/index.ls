@@ -7,9 +7,12 @@ require! {
 module.exports = (opts = {})->
   transform = (file, encoding, callback)->
     if file.isNull! then return callback null, file
-    if file.isStream! then return callback new gutil.PluginError 'gulp-article', 'Stream not supported'
+    if file.isStream! then return callback new gutil.PluginError 'gulp-riot', 'Stream not supported'
 
-    compiledCode = compile file.contents.toString!, opts
+    try
+        compiledCode = compile file.contents.toString!, opts
+    catch
+        return callback new gutil.PluginError 'gulp-riot', 'Compiler Error: ' + e
     if opts.modular
       compiledCode = """
         (function(tagger) {
