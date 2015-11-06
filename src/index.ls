@@ -1,7 +1,7 @@
 require! {
   \gulp-util : gutil
   through2: through
-  riot: {compile}
+  riot: {compile, parsers}
 }
 
 module.exports = (opts = {})->
@@ -9,6 +9,11 @@ module.exports = (opts = {})->
     | file.isNull! => callback null, file
     | file.isStream! => callback new gutil.PluginError \gulp-riot, 'Stream not supported'
     | otherwise =>
+      if opts.parsers?
+        Object.keys opts.parsers .forEach (x)-> Object.keys opts.parsers[x] .forEach (y)->
+          parsers[x][y] = opts.parsers[x][y]
+        delete opts.parsers
+
       try
         compiledCode = compile file.contents.toString!, opts
       catch err
