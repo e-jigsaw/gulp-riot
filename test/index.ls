@@ -266,3 +266,30 @@ it 'should compile with custom js parser', (callback)->
     path: \/hoge/fuga.tag
 
   stream.end!
+
+it 'should compile with whitespace option', (callback)->
+  stream =
+    riot do
+      whitespace: true
+
+  stream.once \data, (file)->
+    contents = file.contents.toString!
+    assert.equal contents, """
+      riot.tag2('sample', '  <p>test {sample}</p>\\\\n', '', '', function(opts) {
+
+        this.sample = 'hoge'
+      }, '{ }');
+    """
+    callback!
+
+  stream.write new gutil.File do
+    contents: new Buffer '''
+      <sample>
+        <p>test { sample }</p>
+
+        this.sample = 'hoge'
+      </sample>
+    '''
+    path: \/hoge/fuga.tag
+
+  stream.end!
