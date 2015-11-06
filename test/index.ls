@@ -31,8 +31,9 @@ it 'should compile riot tag file', (callback)->
   stream.end!
 
 it 'should use compile options', (callback)->
-  stream = riot do
-    compact: true
+  stream =
+    riot do
+      compact: true
 
   stream.once \data, (file)->
     contents = file.contents.toString!
@@ -78,8 +79,9 @@ it 'should jade extension rename js', (callback)->
   stream.end!
 
 it 'should match cli output when type: none', (callback)->
-  stream = riot do
-    type: \none
+  stream =
+    riot do
+      type: \none
 
   stream.once \data, (file)->
     contents = file.contents.toString!
@@ -106,8 +108,9 @@ it 'should match cli output when type: none', (callback)->
   stream.end!
 
 it 'should match modular options output', (callback)->
-  stream = riot do
-    modular: true
+  stream =
+    riot do
+      modular: true
 
   stream.once \data, (file)->
     contents = file.contents.toString!
@@ -187,8 +190,9 @@ it 'should match modular options output', (callback)->
   stream.end!
 
 it 'should return error when compile failed', (callback)->
-  stream = riot do
-            type: \nonescript
+  stream =
+    riot do
+      type: \nonescript
 
   stream.once \error, (err)->
     assert.equal err.plugin, \gulp-riot
