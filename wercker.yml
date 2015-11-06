@@ -1,5 +1,8 @@
-box: wercker/nodejs
+box: node:latest
 build:
   steps:
     - npm-install
+    - script:
+        name: Build
+        code: npm run build
     - npm-test
