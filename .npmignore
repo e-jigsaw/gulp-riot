@@ -1,6 +1,6 @@
 src
 test
-gulpfile.coffee
+gulpfile.ls
 .npmignore
 powered-test
 wercker.yml
