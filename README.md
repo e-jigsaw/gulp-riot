@@ -29,7 +29,7 @@ This plugin compile [riot](https://github.com/muut/riotjs)'s `.tag` files.
 import gulp from 'gulp';
 import riot from 'gulp-riot';
 
-gulp.task('riot', => {
+gulp.task('riot', ()=> {
   gulp.src('example.tag')
       .pipe(riot())
       .pipe(gulp.dest('dest'));
