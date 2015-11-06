@@ -61,6 +61,8 @@ gulp.task 'riot', ->
 
 * compact: `Boolean`
   * Minify `</p> <p>` to `</p><p>`
+* whitespace: `Boolean`
+  * Escape `\n` to `\\n`
 * expr: `Boolean`
   * Run expressions through parser defined with `--type`
 * type: `String, coffeescript | typescript | cs | es6 | livescript | none`
