@@ -10,9 +10,9 @@ module.exports = (opts = {})->
     if file.isStream! then return callback new gutil.PluginError \gulp-riot, 'Stream not supported'
 
     try
-        compiledCode = compile file.contents.toString!, opts
+      compiledCode = compile file.contents.toString!, opts
     catch err
-        return callback new gutil.PluginError \gulp-riot, "Compiler Error: #{err}"
+      return callback new gutil.PluginError \gulp-riot, "Compiler Error: #{err}"
     if opts.modular
       compiledCode = """
         (function(tagger) {
