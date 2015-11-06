@@ -71,6 +71,15 @@ gulp.task 'riot', ->
 * modular: `Boolean`
   * For AMD and CommonJS option
   * See more: http://riotjs.com/guide/compiler/#pre-compilation
+* parsers: `Object`
+  * Define custom parsers
+  * css: `Function`
+    * See more: http://riotjs.com/api/compiler/#css-parser
+  * js: `Function`
+    * See more: http://riotjs.com/api/compiler/#js-parser
+  * html: `Function`
+    * See more: http://riotjs.com/api/compiler/#html-parser
+
 
 # Installation
 

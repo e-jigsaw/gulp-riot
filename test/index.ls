@@ -31,8 +31,9 @@ it 'should compile riot tag file', (callback)->
   stream.end!
 
 it 'should use compile options', (callback)->
-  stream = riot do
-    compact: true
+  stream =
+    riot do
+      compact: true
 
   stream.once \data, (file)->
     contents = file.contents.toString!
@@ -78,8 +79,9 @@ it 'should jade extension rename js', (callback)->
   stream.end!
 
 it 'should match cli output when type: none', (callback)->
-  stream = riot do
-    type: \none
+  stream =
+    riot do
+      type: \none
 
   stream.once \data, (file)->
     contents = file.contents.toString!
@@ -106,8 +108,9 @@ it 'should match cli output when type: none', (callback)->
   stream.end!
 
 it 'should match modular options output', (callback)->
-  stream = riot do
-    modular: true
+  stream =
+    riot do
+      modular: true
 
   stream.once \data, (file)->
     contents = file.contents.toString!
@@ -187,8 +190,9 @@ it 'should match modular options output', (callback)->
   stream.end!
 
 it 'should return error when compile failed', (callback)->
-  stream = riot do
-            type: \nonescript
+  stream =
+    riot do
+      type: \nonescript
 
   stream.once \error, (err)->
     assert.equal err.plugin, \gulp-riot
@@ -201,6 +205,63 @@ it 'should return error when compile failed', (callback)->
 
         this.sample = 'hoge'
       </sample>
+    '''
+    path: \/hoge/fuga.tag
+
+  stream.end!
+
+it 'should compile with custom css parser', (callback)->
+  stream =
+    riot do
+      parsers:
+        css:
+          myparser: (tag, css)-> css.replace /@tag/, tag
+
+  stream.once \data, (file)->
+    contents = file.contents.toString!
+    assert.equal contents, """
+      riot.tag2('custom-parsers', '<p>hi</p>', 'custom-parsers {color: red;}', '', function(opts) {
+      });
+    """
+    callback!
+
+  stream.write new gutil.File do
+    contents: new Buffer '''
+      <custom-parsers>
+        <p>hi</p>
+        <style type="text/myparser">
+          @tag {color: red;}
+        </style>
+      </custom-parsers>
+    '''
+    path: \/hoge/fuga.tag
+
+  stream.end!
+
+it 'should compile with custom js parser', (callback)->
+  stream =
+    riot do
+      parsers:
+        js:
+          myparser: (js)-> js.replace(/@version/, '1.0.0')
+
+  stream.once \data, (file)->
+    contents = file.contents.toString!
+    assert.equal contents, """
+      riot.tag2('custom-parsers', '<p>hi</p>', '', '', function(opts) {
+          this.version = "1.0.0"
+      });
+    """
+    callback!
+
+  stream.write new gutil.File do
+    contents: new Buffer '''
+      <custom-parsers>
+        <p>hi</p>
+        <script type="text/myparser">
+          this.version = "@version"
+        </script>
+      </custom-parsers>
     '''
     path: \/hoge/fuga.tag
 
