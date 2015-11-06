@@ -11,11 +11,10 @@ it 'should compile riot tag file', (callback)->
   stream.once \data, (file)->
     contents = file.contents.toString!
     assert.equal contents, """
-      riot.tag('sample', '<p>test { sample }</p>', function(opts) {
+      riot.tag2('sample', '<p>test {sample}</p>', '', '', function(opts) {
 
         this.sample = 'hoge'
-
-      });
+      }, '{ }');
     """
     callback!
 
@@ -38,11 +37,10 @@ it 'should use compile options', (callback)->
   stream.once \data, (file)->
     contents = file.contents.toString!
     assert.equal contents, """
-      riot.tag('sample', '<p>test { sample }</p><p>test { sample }</p><p>test { sample }</p>', function(opts) {
+      riot.tag2('sample', '<p>test {sample}</p><p>test {sample}</p><p>test {sample}</p>', '', '', function(opts) {
 
         this.sample = 'hoge'
-
-      });
+      }, '{ }');
     """
     callback!
 
@@ -86,12 +84,11 @@ it 'should match cli output when type: none', (callback)->
   stream.once \data, (file)->
     contents = file.contents.toString!
     assert.equal contents, """
-      riot.tag('sample', '<p>test { sample }</p>', function(opts) {
+      riot.tag2('sample', '<p>test {sample}</p>', '', '', function(opts) {
         sample() {
           console.log('test')
         }
-
-      });
+      }, '{ }');
     """
     callback!
 
@@ -135,20 +132,19 @@ it 'should match modular options output', (callback)->
 
 
       <!-- login view -->
-      riot.tag('login', '<form onsubmit="{ login }"> <input name="username" type="text" placeholder="username"> <input name="password" type="password" placeholder="password"> </form>', function(opts) {
+      riot.tag2('login', '<form onsubmit="{login}"> <input name="username" type="text" placeholder="username"> <input name="password" type="password" placeholder="password"> </form>', '', '', function(opts) {
 
         this.login = function() {
           opts.login({
             username: this.username.value,
             password: this.password.value
           })
-        }.bind(this);
+        }.bind(this)
 
         opts.on('login', function() {
           $(body).addClass('logged')
         })
-
-      });
+      }, '{ }');
 
       });
     '''
