@@ -17,7 +17,7 @@ module.exports = (opts = {})->
       try
         compiledCode = compile file.contents.toString!, opts
       catch err
-        return callback new gutil.PluginError \gulp-riot, "Compiler Error: #{err}"
+        return callback new gutil.PluginError \gulp-riot, "#{file.path}: Compiler Error: #{err}"
 
       if opts.modular
         compiledCode = """
