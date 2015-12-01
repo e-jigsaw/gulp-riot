@@ -275,7 +275,7 @@ it 'should compile with whitespace option', (callback)->
   stream.once \data, (file)->
     contents = file.contents.toString!
     assert.equal contents, """
-      riot.tag2('sample', '  <p>test {sample}</p>\\\\n', '', '', function(opts) {
+      riot.tag2('sample', '  <p>test {sample}</p>\\n', '', '', function(opts) {
 
         this.sample = 'hoge'
       }, '{ }');
