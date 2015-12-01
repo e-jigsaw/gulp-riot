@@ -6,21 +6,25 @@ require! {
 
 module.exports = (opts = {})->
   transform = (file, encoding, callback)->
-    | file.isNull! => callback null, file
-    | file.isStream! => callback new gutil.PluginError \gulp-riot, 'Stream not supported'
+    | file.is-null! => callback null, file
+    | file.is-stream! => callback new gutil.PluginError \gulp-riot, 'Stream not supported'
     | otherwise =>
       if opts.parsers?
-        Object.keys opts.parsers .forEach (x)-> Object.keys opts.parsers[x] .forEach (y)->
-          parsers[x][y] = opts.parsers[x][y]
+        Object
+          .keys opts.parsers
+          .for-each (x)->
+            Object
+              .keys opts.parsers[x]
+              .for-each (y)-> parsers[x][y] = opts.parsers[x][y]
         delete opts.parsers
 
       try
-        compiledCode = compile file.contents.toString!, opts
+        compiled-code = compile file.contents.to-string!, opts
       catch err
         return callback new gutil.PluginError \gulp-riot, "#{file.path}: Compiler Error: #{err}"
 
       if opts.modular
-        compiledCode = """
+        compiled-code = """
           (function(tagger) {
             if (typeof define === 'function' && define.amd) {
               define(['riot'], function(riot) { tagger(riot); });
@@ -36,9 +40,9 @@ module.exports = (opts = {})->
         """
 
       file.contents = new Buffer compiledCode
-      splitedPath = file.path.split \.
-      splitedPath[*-1] = \js
-      file.path = splitedPath.join \.
+      splited-path = file.path.split \.
+      splited-path[*-1] = \js
+      file.path = splited-path.join \.
       callback null, file
 
   through.obj transform
