@@ -24,13 +24,13 @@
   "license": "MIT",
   "dependencies": {
     "gulp-util": "3.0.7",
-    "riot": "2.3.11",
+    "riot": "2.3.12",
     "through2": "2.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-espower": "^1.0.0",
-    "gulp-livescript": "^2.4.0",
+    "gulp-livescript": "^3.0.0",
     "gulp-mocha": "^2.2.0",
     "livescript": "^1.4.0",
     "power-assert": "^1.2.0"
