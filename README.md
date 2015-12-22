@@ -5,6 +5,9 @@ gulp-riot  [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge
 
 [![NPM](https://nodei.co/npm/gulp-riot.png?downloadRank=true&downloads=true)](https://www.npmjs.com/package/gulp-riot)
 
+[![Issue Stats](http://issuestats.com/github/e-jigsaw/gulp-riot/badge/issue?style=flat)](http://issuestats.com/github/e-jigsaw/gulp-riot)
+[![Issue Stats](http://issuestats.com/github/e-jigsaw/gulp-riot/badge/pr?style=flat)](http://issuestats.com/github/e-jigsaw/gulp-riot)
+
 gulp plugin for riot
 
 # Usage
