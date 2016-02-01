@@ -134,7 +134,7 @@ it 'should match modular options output', (callback)->
       }
 
 
-      <!-- login view -->
+
       riot.tag2('login', '<form onsubmit="{login}"> <input name="username" type="text" placeholder="username"> <input name="password" type="password" placeholder="password"> </form>', '', '', function(opts) {
 
         this.login = function() {
