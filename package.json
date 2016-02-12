@@ -25,7 +25,7 @@
   "dependencies": {
     "gulp-util": "3.0.7",
     "riot": "2.3.15",
-    "through2": "2.0.0"
+    "through2": "2.0.1"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
