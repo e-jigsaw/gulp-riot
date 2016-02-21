@@ -28,8 +28,8 @@
     "through2": "2.0.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-espower": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-espower": "^1.0.2",
     "gulp-livescript": "^3.0.0",
     "gulp-mocha": "^2.2.0",
     "livescript": "^1.4.0",
