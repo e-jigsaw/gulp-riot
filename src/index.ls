@@ -19,7 +19,7 @@ module.exports = (opts = {})->
         delete opts.parsers
 
       try
-        compiled-code = compile file.contents.to-string!, opts
+        compiled-code = compile file.contents.to-string!, opts, file.path
       catch err
         return callback new gutil.PluginError \gulp-riot, "#{file.path}: Compiler Error: #{err}"
 
