@@ -14,7 +14,7 @@ it 'should compile riot tag file', (callback)->
       riot.tag2('sample', '<p>test {sample}</p>', '', '', function(opts) {
 
         this.sample = 'hoge'
-      }, '{ }');
+      });
     """
     callback!
 
@@ -41,7 +41,7 @@ it 'should use compile options', (callback)->
       riot.tag2('sample', '<p>test {sample}</p><p>test {sample}</p><p>test {sample}</p>', '', '', function(opts) {
 
         this.sample = 'hoge'
-      }, '{ }');
+      });
     """
     callback!
 
@@ -90,7 +90,7 @@ it 'should match cli output when type: none', (callback)->
         sample() {
           console.log('test')
         }
-      }, '{ }');
+      });
     """
     callback!
 
@@ -147,7 +147,7 @@ it 'should match modular options output', (callback)->
         opts.on('login', function() {
           $(body).addClass('logged')
         })
-      }, '{ }');
+      });
 
       });
     '''
@@ -278,7 +278,7 @@ it 'should compile with whitespace option', (callback)->
       riot.tag2('sample', '  <p>test {sample}</p>\\n', '', '', function(opts) {
 
         this.sample = 'hoge'
-      }, '{ }');
+      });
     """
     callback!
 
