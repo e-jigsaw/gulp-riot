@@ -26,7 +26,7 @@ This plugin compile [riot](https://github.com/muut/riotjs)'s `.tag` files.
 </example>
 ```
 
-`gulpfile.js`:
+`gulpfile.babel.js`:
 
 ```js
 import gulp from 'gulp';
