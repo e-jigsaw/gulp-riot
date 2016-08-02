@@ -31,7 +31,7 @@
     "gulp": "^3.9.1",
     "gulp-espower": "^1.0.2",
     "gulp-livescript": "^3.0.0",
-    "gulp-mocha": "^2.2.0",
+    "gulp-mocha": "^3.0.0",
     "livescript": "^1.4.0",
     "power-assert": "^1.2.0"
   }
