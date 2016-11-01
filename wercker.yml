@@ -1,8 +1,12 @@
 box: node:latest
 build:
   steps:
-    - npm-install
+    - script:
+        name: Install
+        code: npm install
     - script:
         name: Build
         code: npm run build
-    - npm-test
+    - script:
+        name: Test
+        code: npm run test
