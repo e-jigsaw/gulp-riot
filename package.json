@@ -1,6 +1,6 @@
 {
   "name": "gulp-riot",
-  "version": "0.5.9",
+  "version": "1.0.0",
   "description": "gulp plugin for riot",
   "keywords": [
     "gulpplugin",
