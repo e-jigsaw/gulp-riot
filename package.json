@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "gulp-util": "3.0.7",
-    "riot": "3.0.2",
+    "riot": "3.0.3",
     "through2": "2.0.3"
   },
   "devDependencies": {
