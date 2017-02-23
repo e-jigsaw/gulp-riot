@@ -1,6 +1,8 @@
 gulp-riot  [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge.fury.io/js/gulp-riot) [![wercker status](https://app.wercker.com/status/be2b2fa4c806197c9cade9b1a5ff8308/s/master "wercker status")](https://app.wercker.com/project/bykey/be2b2fa4c806197c9cade9b1a5ff8308)
 =========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/e-jigsaw/gulp-riot.svg)](https://greenkeeper.io/)
+
 [![dependency Status](https://david-dm.org/e-jigsaw/gulp-riot/status.svg)](https://david-dm.org/e-jigsaw/gulp-riot) [![devDependency Status](https://david-dm.org/e-jigsaw/gulp-riot/dev-status.svg)](https://david-dm.org/e-jigsaw/gulp-riot#info=devDependencies)
 
 [![NPM](https://nodei.co/npm/gulp-riot.png?downloadRank=true&downloads=true)](https://www.npmjs.com/package/gulp-riot)
