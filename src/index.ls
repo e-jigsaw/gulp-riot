@@ -1,5 +1,5 @@
 require! {
-  \gulp-util : gutil
+  \plugin-error : PluginError
   through2: through
   riot: {compile, parsers}
 }
@@ -7,7 +7,7 @@ require! {
 module.exports = (opts = {})->
   transform = (file, encoding, callback)->
     | file.is-null! => callback null, file
-    | file.is-stream! => callback new gutil.PluginError \gulp-riot, 'Stream not supported'
+    | file.is-stream! => callback new PluginError \gulp-riot, 'Stream not supported'
     | otherwise =>
       if opts.parsers?
         Object
@@ -21,7 +21,7 @@ module.exports = (opts = {})->
       try
         compiled-code = compile file.contents.to-string!, opts, file.path
       catch err
-        return callback new gutil.PluginError \gulp-riot, "#{file.path}: Compiler Error: #{err}"
+        return callback new PluginError \gulp-riot, "#{file.path}: Compiler Error: #{err}"
 
       if opts.modular
         compiled-code = """
