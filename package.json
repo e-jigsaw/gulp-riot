@@ -23,7 +23,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "gulp-util": "3.0.8",
+    "plugin-error": "^1.0.1",
     "riot": "3.x",
     "through2": "2.0.3"
   },
@@ -33,6 +33,7 @@
     "gulp-livescript": "^3.0.1",
     "gulp-mocha": "^3.0.1",
     "livescript": "^1.5.0",
-    "power-assert": "^1.4.2"
+    "power-assert": "^1.4.2",
+    "vinyl": "^2.1.0"
   }
 }

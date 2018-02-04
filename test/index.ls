@@ -1,6 +1,7 @@
 require! {
   \power-assert : assert
-  \gulp-util : gutil
+  \vinyl : Vinyl
+  \path : path
 }
 
 riot = unless process.env.CI is \true then require \../src/ else require \../build/
@@ -18,7 +19,7 @@ it 'should compile riot tag file', (callback)->
     """
     callback!
 
-  stream.write new gutil.File do
+  stream.write new Vinyl do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
@@ -45,7 +46,7 @@ it 'should use compile options', (callback)->
     """
     callback!
 
-  stream.write new gutil.File do
+  stream.write new Vinyl do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
@@ -64,10 +65,10 @@ it 'should jade extension rename js', (callback)->
 
   stream.once \data, (file)->
     contents = file.contents.toString!
-    assert.equal file.path, \/hoge/fuga.js
+    assert.equal(file.path, path.normalize('/hoge/fuga.js'))
     callback!
 
-  stream.write new gutil.File do
+  stream.write new Vinyl do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
@@ -94,7 +95,7 @@ it 'should match cli output when type: none', (callback)->
     """
     callback!
 
-  stream.write new gutil.File do
+  stream.write new Vinyl do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
@@ -153,7 +154,7 @@ it 'should match modular options output', (callback)->
     '''
     callback!
 
-  stream.write new gutil.File do
+  stream.write new Vinyl do
     contents: new Buffer '''
       // Login API
       var auth = riot.observable()
@@ -198,7 +199,7 @@ it 'should return error when compile failed', (callback)->
     assert.equal err.plugin, \gulp-riot
     callback!
 
-  stream.write new gutil.File do
+  stream.write new Vinyl do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
@@ -225,7 +226,7 @@ it 'should compile with custom css parser', (callback)->
     """
     callback!
 
-  stream.write new gutil.File do
+  stream.write new Vinyl do
     contents: new Buffer '''
       <custom-parsers>
         <p>hi</p>
@@ -254,7 +255,7 @@ it 'should compile with custom js parser', (callback)->
     """
     callback!
 
-  stream.write new gutil.File do
+  stream.write new Vinyl do
     contents: new Buffer '''
       <custom-parsers>
         <p>hi</p>
@@ -282,7 +283,7 @@ it 'should compile with whitespace option', (callback)->
     """
     callback!
 
-  stream.write new gutil.File do
+  stream.write new Vinyl do
     contents: new Buffer '''
       <sample>
         <p>test { sample }</p>
