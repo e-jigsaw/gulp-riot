@@ -1,12 +1,7 @@
-gulp-riot  [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge.fury.io/js/gulp-riot) [![wercker status](https://app.wercker.com/status/be2b2fa4c806197c9cade9b1a5ff8308/s/master "wercker status")](https://app.wercker.com/project/bykey/be2b2fa4c806197c9cade9b1a5ff8308)
+gulp-riot [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge.fury.io/js/gulp-riot) [![Build Status](https://travis-ci.org/e-jigsaw/gulp-riot.svg?branch=master)](https://travis-ci.org/e-jigsaw/gulp-riot)
 =========
 
-[![dependency Status](https://david-dm.org/e-jigsaw/gulp-riot/status.svg)](https://david-dm.org/e-jigsaw/gulp-riot) [![devDependency Status](https://david-dm.org/e-jigsaw/gulp-riot/dev-status.svg)](https://david-dm.org/e-jigsaw/gulp-riot#info=devDependencies)
-
 [![NPM](https://nodei.co/npm/gulp-riot.png?downloadRank=true&downloads=true)](https://www.npmjs.com/package/gulp-riot)
-
-[![Issue Stats](http://issuestats.com/github/e-jigsaw/gulp-riot/badge/issue?style=flat)](http://issuestats.com/github/e-jigsaw/gulp-riot)
-[![Issue Stats](http://issuestats.com/github/e-jigsaw/gulp-riot/badge/pr?style=flat)](http://issuestats.com/github/e-jigsaw/gulp-riot)
 
 gulp plugin for riot
 
