@@ -6,7 +6,7 @@ import through from 'through2';
 
 const PLUGIN_NAME = 'gulp-riot';
 
-export default function(options = {}) {
+module.exports = function(options = {}) {
   if (options.parsers) {
     Object.keys(options.parsers).forEach(x => {
       Object.keys(options.parsers[x]).forEach(y => {
