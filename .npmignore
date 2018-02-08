@@ -1,6 +1,5 @@
 src
 test
-gulpfile.ls
 .npmignore
-powered-test
 wercker.yml
+.babelrc
