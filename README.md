@@ -1,4 +1,4 @@
-gulp-riot [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge.fury.io/js/gulp-riot) [![Build Status](https://travis-ci.org/e-jigsaw/gulp-riot.svg?branch=master)](https://travis-ci.org/e-jigsaw/gulp-riot)
+gulp-riot [![npm version](https://badge.fury.io/js/gulp-riot.svg)](http://badge.fury.io/js/gulp-riot) [![Build Status](https://travis-ci.org/e-jigsaw/gulp-riot.svg?branch=master)](https://travis-ci.org/e-jigsaw/gulp-riot) [![gulp-riot Dev Token](https://badge.devtoken.rocks/gulp-riot)](https://devtoken.rocks/package/gulp-riot)
 =========
 
 [![NPM](https://nodei.co/npm/gulp-riot.png?downloadRank=true&downloads=true)](https://www.npmjs.com/package/gulp-riot)
